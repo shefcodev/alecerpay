@@ -1,5 +1,7 @@
 import { FC } from "react";
 import WalletsSection from "./components/WalletsSection";
+import WalletActions from "./components/WalletActions";
+import TransactionSection from "./components/TransactionSection";
 
 const DashboardPage: FC = () => {
   return (
@@ -12,8 +14,10 @@ const DashboardPage: FC = () => {
           Here&apos;s your financial overview
         </p>
       </div>
-      <section className="flex flex-col">
+      <section className="flex flex-col gap-4">
         <WalletsSection />
+        <WalletActions />
+        <TransactionSection />
       </section>
     </section>
   );

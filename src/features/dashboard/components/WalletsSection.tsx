@@ -23,7 +23,7 @@ const WalletsSection: FC = () => {
           </span>
         </button>
       </header>
-      <div className="w-full grid grid-cols-4 gap-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {WALLETS.map((wallet, index) => (
           <WalletCard key={index} wallet={wallet} />
         ))}
