@@ -37,9 +37,9 @@ const Receive: FC<ReceiveProps> = ({
       <path
         d="M15.8327 17.5H4.16602"
         stroke="#64748B"
-        stroke-width="1.66667"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

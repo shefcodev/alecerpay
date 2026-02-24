@@ -4,9 +4,14 @@ import Image from "next/image";
 interface LogoutButtonProps {
   label?: string;
   onLogout: () => void;
+  isExpanded?: boolean;
 }
 
-const LogoutButton: FC<LogoutButtonProps> = ({ label, onLogout }) => {
+const LogoutButton: FC<LogoutButtonProps> = ({
+  label,
+  onLogout,
+  isExpanded,
+}) => {
   return (
     <button
       onClick={onLogout}
@@ -19,9 +24,11 @@ const LogoutButton: FC<LogoutButtonProps> = ({ label, onLogout }) => {
         height={16}
         className="w-4 h-4 object-cover"
       />
-      <span className="text-sm text-error font-poppins font-medium">
-        {label}
-      </span>
+      {isExpanded && (
+        <span className="text-sm text-error font-poppins font-medium">
+          {label}
+        </span>
+      )}
     </button>
   );
 };

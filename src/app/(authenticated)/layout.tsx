@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import Navbar from "@/components/layout/Navbar";
+import SidebarContextProvider from "@/sidebar-provider";
+import StackLayout from "@/components/layout/StackLayout";
 
 const layout = ({ children }: { children: ReactNode }) => {
   return (
-    <section className="w-full min-h-screen flex">
-      <Navbar />
-      <div className="flex-1">{children}</div>
-    </section>
+    <SidebarContextProvider>
+      <StackLayout>{children}</StackLayout>
+    </SidebarContextProvider>
   );
 };
 

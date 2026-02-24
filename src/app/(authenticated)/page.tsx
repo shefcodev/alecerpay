@@ -1,7 +1,8 @@
 import { FC } from "react";
+import DashboardPage from "@/features/dashboard/DashboardPage";
 
 const page: FC = () => {
-  return <div>page</div>;
+  return <DashboardPage />;
 };
 
 export default page;
