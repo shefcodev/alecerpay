@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, Dispatch, SetStateAction } from "react";
+import { FC, Dispatch, SetStateAction, RefObject } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,9 +13,17 @@ import { cn } from "@/lib/utils";
 interface SidebarProps {
   isExpanded: boolean | null;
   setIsExpanded: Dispatch<SetStateAction<boolean | null>>;
+  showBar: boolean | null;
+  onShowBar: (value: boolean) => void;
+  ref: RefObject<HTMLDivElement | null> | null;
 }
 
-const Sidebar: FC<SidebarProps> = ({ isExpanded, setIsExpanded }) => {
+const Sidebar: FC<SidebarProps> = ({
+  isExpanded,
+  setIsExpanded,
+  showBar,
+  ref,
+}) => {
   const pathname = usePathname();
 
   return (
@@ -23,7 +31,9 @@ const Sidebar: FC<SidebarProps> = ({ isExpanded, setIsExpanded }) => {
       className={cn(
         "w-fit sm:w-40 md:w-50 lg:w-60 h-full max-w-60 min-h-screen flex flex-col justify-between gap-16 bg-primary-50 px-2.5 pt-12 pb-8 overflow-y-auto scroll-bar",
         !isExpanded && "w-fit max-w-fit",
+        showBar && "max-md:fixed max-md:top-0 max-md:left-0 z-999",
       )}
+      ref={ref}
     >
       <nav className="flex flex-col gap-12">
         <div className="flex justify-between pl-4 relative">

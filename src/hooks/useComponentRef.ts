@@ -23,7 +23,7 @@ export function useComponentRef<
   T = boolean,
   S extends Element = HTMLDivElement,
 >(options?: UseComponentRefOptions<T>) {
-  const { initialValue = true as T } = options || {};
+  const { initialValue = false as T } = options || {};
   const [isOpen, setIsOpen] = useState<T | null>(initialValue);
   const ref = useRef<S | null>(null);
 
